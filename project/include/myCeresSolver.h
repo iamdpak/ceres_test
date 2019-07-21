@@ -48,9 +48,9 @@ private:
 		    ceres::AngleAxisRotatePoint(sRT, ip, op);
 
 		    //scale
-		    ip[0] *= sRT[6];
-		    ip[1] *= sRT[6];
-		    ip[2] *= sRT[6];
+		    op[0] *= sRT[6];
+		    op[1] *= sRT[6];
+		    op[2] *= sRT[6];
 
 		    //translate
 		    op[0] += sRT[3];
