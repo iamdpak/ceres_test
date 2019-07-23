@@ -51,7 +51,7 @@ bool myCeresSolver::add_residuals(double* Pf,double* Pt)
 
 	//check_math(Pf,Pt);
 	//ceres::ScaledLoss* loss_function = new ceres::ScaledLoss(new ceres::HuberLoss(1.0), 1, ceres::TAKE_OWNERSHIP);
-	ceres::CostFunction* cost_function =new ceres::AutoDiffCostFunction<F1, 1, 7>(new F1(Pf[0],Pf[1],Pf[2],Pt[0],Pt[1],Pt[2]));
+	ceres::CostFunction* cost_function =new ceres::AutoDiffCostFunction<F1, 3, 7>(new F1(Pf[0],Pf[1],Pf[2],Pt[0],Pt[1],Pt[2]));
 	problem.AddResidualBlock(cost_function, NULL, sRT_);
 	return true;
 }
